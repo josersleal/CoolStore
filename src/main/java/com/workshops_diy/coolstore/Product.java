@@ -7,29 +7,76 @@ package com.workshops_diy.coolstore;
 @javax.persistence.Entity
 public class Product implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "PRODUCT_ID_GENERATOR")
-    @javax.persistence.Id
-    @javax.persistence.SequenceGenerator(name = "PRODUCT_ID_GENERATOR", sequenceName = "PRODUCT_ID_SEQ")
-    private java.lang.Long id;
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "PRODUCT_ID_GENERATOR")
+	@javax.persistence.Id
+	@javax.persistence.SequenceGenerator(name = "PRODUCT_ID_GENERATOR", sequenceName = "PRODUCT_ID_SEQ")
+	private java.lang.Long id;
 
-    public Product() {
-    }
-    
-    public Product(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "Description")
+	private java.lang.String desc;
 
-    public java.lang.Long getId() {
-        return this.id;
-    }
-    
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "Item ID")
+	private java.lang.String itemId;
 
+	@org.kie.api.definition.type.Label(value = "Name")
+	private java.lang.String name;
 
+	@org.kie.api.definition.type.Label(value = "Price")
+	private java.lang.Double price;
 
+	public Product() {
+	}
+
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	public java.lang.String getDesc() {
+		return this.desc;
+	}
+
+	public void setDesc(java.lang.String desc) {
+		this.desc = desc;
+	}
+
+	public java.lang.String getItemId() {
+		return this.itemId;
+	}
+
+	public void setItemId(java.lang.String itemId) {
+		this.itemId = itemId;
+	}
+
+	public java.lang.String getName() {
+		return this.name;
+	}
+
+	public void setName(java.lang.String name) {
+		this.name = name;
+	}
+
+	public java.lang.Double getPrice() {
+		return this.price;
+	}
+
+	public void setPrice(java.lang.Double price) {
+		this.price = price;
+	}
+
+	public Product(java.lang.Long id, java.lang.String desc,
+			java.lang.String itemId, java.lang.String name,
+			java.lang.Double price) {
+		this.id = id;
+		this.desc = desc;
+		this.itemId = itemId;
+		this.name = name;
+		this.price = price;
+	}
 
 }
