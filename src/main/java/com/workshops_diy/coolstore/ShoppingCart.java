@@ -23,15 +23,15 @@ public class ShoppingCart implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Shopping Cart Total")
 	private java.lang.Double cartTotal;
 
-	@org.kie.api.definition.type.Label("Shopping Promotional Savings")
-	private java.lang.Double shoppingPromoSavings;
-
 	@org.kie.api.definition.type.Label("Shipping Total")
 	private java.lang.Double shippingTotal;
 
+	@org.kie.api.definition.type.Label("Shopping Cart Item List")
 	@javax.persistence.OneToMany(cascade = {javax.persistence.CascadeType.ALL}, fetch = javax.persistence.FetchType.EAGER)
-	@org.kie.api.definition.type.Label(value = "Shopping Cart Item List")
 	private java.util.List<com.workshops_diy.coolstore.ShoppingCartItem> shoppingCartItemList;
+
+	@org.kie.api.definition.type.Label(value = "Shipping Promotional Savings")
+	private java.lang.Double shippingPromoSavings;
 
 	public ShoppingCart() {
 	}
@@ -68,14 +68,6 @@ public class ShoppingCart implements java.io.Serializable {
 		this.cartTotal = cartTotal;
 	}
 
-	public java.lang.Double getShoppingPromoSavings() {
-		return this.shoppingPromoSavings;
-	}
-
-	public void setShoppingPromoSavings(java.lang.Double shoppingPromoSavings) {
-		this.shoppingPromoSavings = shoppingPromoSavings;
-	}
-
 	public java.lang.Double getShippingTotal() {
 		return this.shippingTotal;
 	}
@@ -93,21 +85,29 @@ public class ShoppingCart implements java.io.Serializable {
 		this.shoppingCartItemList = shoppingCartItemList;
 	}
 
+	public java.lang.Double getShippingPromoSavings() {
+		return this.shippingPromoSavings;
+	}
+
+	public void setShippingPromoSavings(java.lang.Double shippingPromoSavings) {
+		this.shippingPromoSavings = shippingPromoSavings;
+	}
+
 	public ShoppingCart(
 			java.lang.Long id,
 			java.lang.Double cartItemPromoSavings,
 			java.lang.Double cartItemTotal,
 			java.lang.Double cartTotal,
-			java.lang.Double shoppingPromoSavings,
 			java.lang.Double shippingTotal,
-			java.util.List<com.workshops_diy.coolstore.ShoppingCartItem> shoppingCartItemList) {
+			java.util.List<com.workshops_diy.coolstore.ShoppingCartItem> shoppingCartItemList,
+			java.lang.Double shippingPromoSavings) {
 		this.id = id;
 		this.cartItemPromoSavings = cartItemPromoSavings;
 		this.cartItemTotal = cartItemTotal;
 		this.cartTotal = cartTotal;
-		this.shoppingPromoSavings = shoppingPromoSavings;
 		this.shippingTotal = shippingTotal;
 		this.shoppingCartItemList = shoppingCartItemList;
+		this.shippingPromoSavings = shippingPromoSavings;
 	}
 
 }
