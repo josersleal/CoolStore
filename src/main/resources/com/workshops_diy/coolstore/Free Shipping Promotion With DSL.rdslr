@@ -1,0 +1,9 @@
+package com.workshops_diy.coolstore;
+
+import java.lang.Number;
+
+rule "Free Shipping Promotion With DSL"
+	dialect "mvel"
+	when
+	then
+end
