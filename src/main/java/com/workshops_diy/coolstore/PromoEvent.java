@@ -5,31 +5,54 @@ package com.workshops_diy.coolstore;
  */
 
 @javax.persistence.Entity
+@org.kie.api.definition.type.Role(org.kie.api.definition.type.Role.Type.EVENT)
 public class PromoEvent implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "PROMOEVENT_ID_GENERATOR")
-    @javax.persistence.Id
-    @javax.persistence.SequenceGenerator(name = "PROMOEVENT_ID_GENERATOR", sequenceName = "PROMOEVENT_ID_SEQ")
-    private java.lang.Long id;
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "PROMOEVENT_ID_GENERATOR")
+	@javax.persistence.Id
+	@javax.persistence.SequenceGenerator(name = "PROMOEVENT_ID_GENERATOR", sequenceName = "PROMOEVENT_ID_SEQ")
+	private java.lang.Long id;
 
-    public PromoEvent() {
-    }
-    
-    public PromoEvent(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "Item ID")
+	private java.lang.String itemId;
 
-    public java.lang.Long getId() {
-        return this.id;
-    }
-    
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "Percent Off")
+	private java.lang.Double percentOff;
 
+	public PromoEvent() {
+	}
 
+	public java.lang.Long getId() {
+		return this.id;
+	}
 
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	public java.lang.String getItemId() {
+		return this.itemId;
+	}
+
+	public void setItemId(java.lang.String itemId) {
+		this.itemId = itemId;
+	}
+
+	public java.lang.Double getPercentOff() {
+		return this.percentOff;
+	}
+
+	public void setPercentOff(java.lang.Double percentOff) {
+		this.percentOff = percentOff;
+	}
+
+	public PromoEvent(java.lang.Long id, java.lang.String itemId,
+			java.lang.Double percentOff) {
+		this.id = id;
+		this.itemId = itemId;
+		this.percentOff = percentOff;
+	}
 
 }
