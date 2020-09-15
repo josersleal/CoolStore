@@ -8,4 +8,8 @@ rule "Apply Cart Item Promotions"
 		$sci : ShoppingCartItem( $itemId : itemId)
 		PromoEvent( itemId == $itemId && $percentOff : percentOff) from entry-point "PromoEvent"
 	then
+		modify( $sci ) {
+				setPromoSavings( 0.0 ), 
+				setPrice( 0.0 )
+		}
 end
