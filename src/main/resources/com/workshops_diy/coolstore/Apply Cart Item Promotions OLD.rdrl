@@ -2,7 +2,7 @@ package com.workshops_diy.coolstore;
 
 import java.lang.Number;
 
-rule "Apply Cart Item Promotions"
+rule "Apply Cart Item Promotions OLD"
 	dialect "mvel"
 	no-loop true
 	ruleflow-group "promo-cart-rules"
