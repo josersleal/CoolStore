@@ -4,6 +4,14 @@ import java.lang.Number;
 
 rule "Apply Cart Item Promotions"
 	dialect "mvel"
+	no-loop true
+	ruleflow-group "promo-cart-rules"
 	when
+		$sci : ShoppingCartItem( $itemId : itemId)
+		PromoEvent( itemId == $itemId && $pctOff : percentOff) from entry-point "PromoEvent"
 	then
+		modify( $sci ) {
+				setPromoSavings( "0.0" ), 
+				setPrice( 0.0 )
+		}
 end
