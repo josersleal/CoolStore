@@ -270,7 +270,7 @@
     <type>RULE</type>
     <ruleFlowGroup>&quot;promo-rules&quot;</ruleFlowGroup>
     <skipFromBuild>false</skipFromBuild>
-    <stateless>false</stateless>
+    <stateless>true</stateless>
   </settings>
   <imports>
     <imports/>
