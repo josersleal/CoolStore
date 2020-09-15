@@ -11,7 +11,7 @@ rule "Apply Cart Item Promotions"
 		PromoEvent( itemId == $itemId && $pctOff : percentOff) from entry-point "PromoEvent"
 	then
 		modify( $sci ) {
-				setPromoSavings( "0.0" ), 
-				setPrice( 0.0 )
+				setPrice( 0.0 ), 
+				setPromoSavings( "" )
 		}
 end
