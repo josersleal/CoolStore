@@ -14,23 +14,23 @@ public class ShoppingCartItem implements java.io.Serializable {
 	@javax.persistence.SequenceGenerator(name = "SHOPPINGCARTITEM_ID_GENERATOR", sequenceName = "SHOPPINGCARTITEM_ID_SEQ")
 	private java.lang.Long id;
 
-	@org.kie.api.definition.type.Label(value = "Item ID")
+	@org.kie.api.definition.type.Label("Item ID")
 	private java.lang.String itemId;
 
-	@org.kie.api.definition.type.Label(value = "Name")
+	@org.kie.api.definition.type.Label("Name")
 	private java.lang.String name;
 
-	@org.kie.api.definition.type.Label(value = "Price")
+	@org.kie.api.definition.type.Label("Price")
 	private java.lang.Double price;
 
-	@org.kie.api.definition.type.Label(value = "Promotional Savings")
-	private java.lang.String promoSavings;
+	@org.kie.api.definition.type.Label("Promotional Savings")
+	private Double promoSavings;
 
-	@org.kie.api.definition.type.Label(value = "Quantity")
+	@org.kie.api.definition.type.Label("Quantity")
 	private java.lang.Integer quantity;
 
 	@javax.persistence.ManyToOne(cascade = {javax.persistence.CascadeType.ALL}, fetch = javax.persistence.FetchType.EAGER)
-	@org.kie.api.definition.type.Label(value = "Shopping Cart")
+	@org.kie.api.definition.type.Label("Shopping Cart")
 	private com.workshops_diy.coolstore.ShoppingCart shoppingCart;
 
 	public ShoppingCartItem() {
@@ -68,14 +68,6 @@ public class ShoppingCartItem implements java.io.Serializable {
 		this.price = price;
 	}
 
-	public java.lang.String getPromoSavings() {
-		return this.promoSavings;
-	}
-
-	public void setPromoSavings(java.lang.String promoSavings) {
-		this.promoSavings = promoSavings;
-	}
-
 	public java.lang.Integer getQuantity() {
 		return this.quantity;
 	}
@@ -93,9 +85,17 @@ public class ShoppingCartItem implements java.io.Serializable {
 		this.shoppingCart = shoppingCart;
 	}
 
+	public java.lang.Double getPromoSavings() {
+		return this.promoSavings;
+	}
+
+	public void setPromoSavings(java.lang.Double promoSavings) {
+		this.promoSavings = promoSavings;
+	}
+
 	public ShoppingCartItem(java.lang.Long id, java.lang.String itemId,
 			java.lang.String name, java.lang.Double price,
-			java.lang.String promoSavings, java.lang.Integer quantity,
+			java.lang.Double promoSavings, java.lang.Integer quantity,
 			com.workshops_diy.coolstore.ShoppingCart shoppingCart) {
 		this.id = id;
 		this.itemId = itemId;
