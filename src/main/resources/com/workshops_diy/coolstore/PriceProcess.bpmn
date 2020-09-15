@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_YXrdkPdeEeq3NP_yFUY03Q" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_p98M0PdiEeq3NP_yFUY03Q" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+  <bpmn2:itemDefinition id="_sci1Item" structureRef="com.workshops_diy.coolstore.ShoppingCartItem"/>
+  <bpmn2:itemDefinition id="_sci2Item" structureRef="com.workshops_diy.coolstore.ShoppingCartItem"/>
+  <bpmn2:itemDefinition id="_scItem" structureRef="com.workshops_diy.coolstore.ShoppingCart"/>
   <bpmn2:itemDefinition id="__FD9D47E5-F7C3-4DCC-8F87-A4C1995074D3_namespaceInputXItem" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="__FD9D47E5-F7C3-4DCC-8F87-A4C1995074D3_modelInputXItem" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="__FD9D47E5-F7C3-4DCC-8F87-A4C1995074D3_decisionInputXItem" structureRef="java.lang.String"/>
@@ -16,6 +19,9 @@
   <bpmn2:itemDefinition id="__EB4CEF98-9076-4769-A446-40FF3175230F_modelInputXItem" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="__EB4CEF98-9076-4769-A446-40FF3175230F_decisionInputXItem" structureRef="java.lang.String"/>
   <bpmn2:process id="coolstore.PriceProcess" drools:packageName="com.workshops_diy.coolstore" drools:version="1.0" drools:adHoc="false" name="PriceProcess" isExecutable="true" processType="Public">
+    <bpmn2:property id="sci1" itemSubjectRef="_sci1Item" name="sci1"/>
+    <bpmn2:property id="sci2" itemSubjectRef="_sci2Item" name="sci2"/>
+    <bpmn2:property id="sc" itemSubjectRef="_scItem" name="sc"/>
     <bpmn2:sequenceFlow id="_0B9D977E-62C3-4725-820A-7DBC5D841E04" sourceRef="_EB4CEF98-9076-4769-A446-40FF3175230F" targetRef="_9785C71E-E575-4793-B761-350DEB21292D">
       <bpmn2:extensionElements>
         <drools:metaData name="isAutoConnection.source">
@@ -128,8 +134,8 @@
       <bpmn2:outgoing>_8DE18664-6197-420D-A8D8-CAA2AE656B20</bpmn2:outgoing>
     </bpmn2:businessRuleTask>
   </bpmn2:process>
-  <bpmndi:BPMNDiagram id="_YXsEoPdeEeq3NP_yFUY03Q">
-    <bpmndi:BPMNPlane id="_YXsEofdeEeq3NP_yFUY03Q" bpmnElement="coolstore.PriceProcess">
+  <bpmndi:BPMNDiagram id="_p98M0fdiEeq3NP_yFUY03Q">
+    <bpmndi:BPMNPlane id="_p98M0vdiEeq3NP_yFUY03Q" bpmnElement="coolstore.PriceProcess">
       <bpmndi:BPMNShape id="shape__FD9D47E5-F7C3-4DCC-8F87-A4C1995074D3" bpmnElement="_FD9D47E5-F7C3-4DCC-8F87-A4C1995074D3">
         <dc:Bounds height="102.0" width="154.0" x="423.0" y="60.0"/>
       </bpmndi:BPMNShape>
@@ -177,12 +183,12 @@
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_YXsEovdeEeq3NP_yFUY03Q" type="BPSimData">
+  <bpmn2:relationship id="_p98M0_diEeq3NP_yFUY03Q" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
           <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_FD9D47E5-F7C3-4DCC-8F87-A4C1995074D3" id="_YXsEo_deEeq3NP_yFUY03Q">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_FD9D47E5-F7C3-4DCC-8F87-A4C1995074D3" id="_p98z4PdiEeq3NP_yFUY03Q">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -202,7 +208,7 @@
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_2A1A8463-66ED-4341-9F30-94036B60E063" id="_YXsEpPdeEeq3NP_yFUY03Q">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_2A1A8463-66ED-4341-9F30-94036B60E063" id="_p98z4fdiEeq3NP_yFUY03Q">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -222,7 +228,7 @@
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_4995627C-FE62-4D1C-B179-055DDA7BF829" id="_YXsEpfdeEeq3NP_yFUY03Q">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_4995627C-FE62-4D1C-B179-055DDA7BF829" id="_p98z4vdiEeq3NP_yFUY03Q">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -242,7 +248,7 @@
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_9785C71E-E575-4793-B761-350DEB21292D" id="_YXsEpvdeEeq3NP_yFUY03Q">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_9785C71E-E575-4793-B761-350DEB21292D" id="_p98z4_diEeq3NP_yFUY03Q">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -262,14 +268,14 @@
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_C449E447-0C7A-4F90-B9CA-C03EB9C4BAB3" id="_YXsEp_deEeq3NP_yFUY03Q">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_C449E447-0C7A-4F90-B9CA-C03EB9C4BAB3" id="_p98z5PdiEeq3NP_yFUY03Q">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
               </bpsim:ProcessingTime>
             </bpsim:TimeParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_EB4CEF98-9076-4769-A446-40FF3175230F" id="_YXsEqPdeEeq3NP_yFUY03Q">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_EB4CEF98-9076-4769-A446-40FF3175230F" id="_p98z5fdiEeq3NP_yFUY03Q">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -292,7 +298,7 @@
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_YXrdkPdeEeq3NP_yFUY03Q</bpmn2:source>
-    <bpmn2:target>_YXrdkPdeEeq3NP_yFUY03Q</bpmn2:target>
+    <bpmn2:source>_p98M0PdiEeq3NP_yFUY03Q</bpmn2:source>
+    <bpmn2:target>_p98M0PdiEeq3NP_yFUY03Q</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
