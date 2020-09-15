@@ -1,0 +1,9 @@
+package com.workshops_diy.coolstore;
+
+import java.lang.Number;
+
+rule "Apply Cart Item Promotions"
+	dialect "mvel"
+	when
+	then
+end
