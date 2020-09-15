@@ -1,0 +1,9 @@
+package com.workshops_diy.coolstore;
+
+import java.lang.Number;
+
+rule "Total Shopping Cart"
+	dialect "mvel"
+	when
+	then
+end
